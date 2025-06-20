@@ -273,6 +273,8 @@
     <!-- Botão fixo de Ranking -->
     <button id="ranking-fixed-btn" title="Ver Ranking">🏆 Ranking</button>
 
+
+
     <div class="overlay" id="start-screen">
         <h1>Quiz Gamer - TechBrain</h1>
         <input type="text" id="player-name" placeholder="Digite seu nome..." maxlength="15" />
@@ -322,8 +324,10 @@
             <h2>🏆 Ranking - TechBrain</h2>
             <ol id="ranking-list" style="text-align:center; margin-bottom:20px; color:#0f0;"></ol>
             <button id="ranking-back-btn">Voltar</button>
+            <button id="clear-ranking-btn">Limpar Ranking</button>
         </div>
     </div>
+
 
     <audio id="bg-music" loop src="techbrain.mp3"></audio>
     <audio id="sound-correct" src="correto.mp3"></audio>
@@ -884,6 +888,14 @@
             bgMusic.currentTime = 0;
             showScreen(startScreen);
         }
+
+        const clearRankingBtn = document.getElementById("clear-ranking-btn");
+
+        clearRankingBtn.addEventListener("click", () => {
+            soundClick.play();
+            localStorage.removeItem("techbrain_ranking");
+            rankingList.innerHTML = "<li>Nenhum registro</li>";
+        });
     </script>
 </body>
 
