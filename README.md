@@ -20,7 +20,7 @@
             background: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
             background-size: cover;
             color: #00ff00;
-            text-shadow: 0 0 5px #0f0;
+            text-shadow: 0 0 5px rgb(32, 253, 12);
         }
         
         .overlay {
@@ -365,7 +365,7 @@
         let timeLeft = 15;
         let selectedLevel = "easy";
         let selectedCategory = "games";
-        let filteredQuestions = []; // 🌟 Adicione isso
+        let filteredQuestions = [];
 
 
         const questions = [
@@ -406,6 +406,36 @@
                 question: "Qual desses é um jogo de batalha real?",
                 options: ["Fortnite", "Minecraft", "The Sims", "Tetris"],
                 correct: 0
+            }, {
+                level: "Fácil",
+                category: "Games",
+                question: "Qual jogo é conhecido pelo personagem Lara Croft?",
+                options: ["Tomb Raider", "Assassin's Creed", "Uncharted", "Halo"],
+                correct: 0
+            }, {
+                level: "Fácil",
+                category: "Games",
+                question: "Em qual jogo você pode construir com blocos em um mundo aberto?",
+                options: ["Minecraft", "Overwatch", "FIFA", "Call of Duty"],
+                correct: 0
+            }, {
+                level: "Fácil",
+                category: "Games",
+                question: "Qual desses jogos é de estratégia em tempo real?",
+                options: ["Age of Empires", "Super Mario Bros", "Fortnite", "Pac-Man"],
+                correct: 0
+            }, {
+                level: "Fácil",
+                category: "Games",
+                question: "Quem é o personagem principal de 'Sonic the Hedgehog'?",
+                options: ["Sonic", "Tails", "Knuckles", "Shadow"],
+                correct: 0
+            }, {
+                level: "Fácil",
+                category: "Games",
+                question: "Qual console é fabricado pela Microsoft?",
+                options: ["Xbox", "PlayStation", "Switch", "GameCube"],
+                correct: 0
             },
 
             // 🌟 GAMES - MÉDIO
@@ -445,6 +475,36 @@
                 question: "Quem é o criador do personagem Mario?",
                 options: ["Hideo Kojima", "Shigeru Miyamoto", "Gabe Newell", "Phil Spencer"],
                 correct: 1
+            }, {
+                level: "Médio",
+                category: "Games",
+                question: "Qual jogo da série 'The Elder Scrolls' se passa na província de Skyrim?",
+                options: ["Skyrim", "Oblivion", "Morrowind", "Daggerfall"],
+                correct: 0
+            }, {
+                level: "Médio",
+                category: "Games",
+                question: "Qual jogo famoso tem uma moeda chamada 'V-Bucks'?",
+                options: ["Fortnite", "Minecraft", "League of Legends", "Overwatch"],
+                correct: 0
+            }, {
+                level: "Médio",
+                category: "Games",
+                question: "Qual estúdio é responsável pela franquia 'Mass Effect'?",
+                options: ["BioWare", "Valve", "Blizzard", "Rockstar"],
+                correct: 0
+            }, {
+                level: "Médio",
+                category: "Games",
+                question: "Em que ano foi lançado o jogo 'Half-Life 2'?",
+                options: ["2004", "2001", "2006", "2000"],
+                correct: 0
+            }, {
+                level: "Médio",
+                category: "Games",
+                question: "Qual desses jogos é um MOBA (Multiplayer Online Battle Arena)?",
+                options: ["League of Legends", "Call of Duty", "FIFA", "Minecraft"],
+                correct: 0
             },
 
             // 🌟 GAMES - DIFÍCIL
@@ -484,6 +544,36 @@
                 question: "Dark Souls foi criado por qual diretor?",
                 options: ["Hidetaka Miyazaki", "Shigeru Miyamoto", "Gabe Newell", "Todd Howard"],
                 correct: 0
+            }, {
+                level: "Difícil",
+                category: "Games",
+                question: "Qual foi o primeiro jogo da série 'Dark Souls' a ser lançado?",
+                options: ["Demon’s Souls", "Dark Souls", "Bloodborne", "Sekiro"],
+                correct: 0
+            }, {
+                level: "Difícil",
+                category: "Games",
+                question: "Qual linguagem de programação é usada para criar mods no jogo 'Skyrim'?",
+                options: ["Papyrus", "Lua", "Python", "JavaScript"],
+                correct: 0
+            }, {
+                level: "Difícil",
+                category: "Games",
+                question: "Qual é o nome da principal cidade em 'The Witcher 3'?",
+                options: ["Novigrad", "Oxenfurt", "Kaer Morhen", "Vizima"],
+                correct: 0
+            }, {
+                level: "Difícil",
+                category: "Games",
+                question: "Qual engine foi usada para desenvolver 'The Last of Us Part II'?",
+                options: ["Naughty Dog Engine", "Unreal Engine", "Frostbite", "Unity"],
+                correct: 0
+            }, {
+                level: "Difícil",
+                category: "Games",
+                question: "Qual o nome do diretor de arte da série 'Metroid'?",
+                options: ["Kenji Yamamoto", "Yoshio Sakamoto", "Shigeru Miyamoto", "Hidetaka Miyazaki"],
+                correct: 1
             },
 
             // 💻 PROGRAMAÇÃO - FÁCIL
@@ -523,6 +613,30 @@
                 question: "Python é conhecido por ser:",
                 options: ["Difícil de aprender", "Fácil de ler", "Somente usado em web", "Somente para jogos"],
                 correct: 1
+            }, {
+                level: "Fácil",
+                category: "Programação",
+                question: "O que significa HTML?",
+                options: ["HyperText Markup Language", "HyperText Markdown Language", "Hyperlink Text Markup Language", "Hyper Transfer Markup Language"],
+                correct: 0
+            }, {
+                level: "Fácil",
+                category: "Programação",
+                question: "Qual é o símbolo para declarar comentários em CSS?",
+                options: ["/* comentário */", "// comentário", "<!-- comentário -->", "# comentário"],
+                correct: 0
+            }, {
+                level: "Fácil",
+                category: "Programação",
+                question: "Qual tag HTML é usada para criar um parágrafo?",
+                options: ["<p>", "<div>", "<span>", "<h1>"],
+                correct: 0
+            }, {
+                level: "Fácil",
+                category: "Programação",
+                question: "JavaScript roda no:",
+                options: ["Navegador", "Servidor somente", "Banco de dados", "Editor de texto"],
+                correct: 0
             },
 
             // 💻 PROGRAMAÇÃO - MÉDIO
@@ -561,6 +675,36 @@
                 category: "Programação",
                 question: "Git serve para:",
                 options: ["Controle de versão", "Estilo CSS", "Criar sites", "Desenhar gráficos"],
+                correct: 0
+            }, {
+                level: "Médio",
+                category: "Programação",
+                question: "Qual método converte uma string para um número em JS?",
+                options: ["parseInt()", "toString()", "Number()", "parseFloat()"],
+                correct: 0
+            }, {
+                level: "Médio",
+                category: "Programação",
+                question: "O que faz o método .filter() em um array JS?",
+                options: ["Filtra elementos com base em condição", "Adiciona elementos", "Remove elementos", "Ordena elementos"],
+                correct: 0
+            }, {
+                level: "Médio",
+                category: "Programação",
+                question: "Qual palavra-chave cria uma variável que pode ser alterada em JS?",
+                options: ["let", "const", "var", "final"],
+                correct: 0
+            }, {
+                level: "Médio",
+                category: "Programação",
+                question: "Qual operador lógico representa 'OU' em JS?",
+                options: ["||", "&&", "!", "&"],
+                correct: 0
+            }, {
+                level: "Médio",
+                category: "Programação",
+                question: "Qual comando interrompe um loop em JS?",
+                options: ["break", "continue", "stop", "exit"],
                 correct: 0
             },
 
@@ -601,6 +745,36 @@
                 question: "TypeScript é uma variação de qual linguagem?",
                 options: ["Python", "JavaScript", "C#", "PHP"],
                 correct: 1
+            }, {
+                level: "Difícil",
+                category: "Programação",
+                question: "Qual conceito descreve funções que retornam outras funções em JS?",
+                options: ["Funções de ordem superior", "Closures", "Callbacks", "Promises"],
+                correct: 0
+            }, {
+                level: "Difícil",
+                category: "Programação",
+                question: "O que significa 'immutabilidade' em programação funcional?",
+                options: ["Dados que não mudam", "Variáveis globais", "Funções anônimas", "Laços infinitos"],
+                correct: 0
+            }, {
+                level: "Difícil",
+                category: "Programação",
+                question: "Qual é a principal vantagem do TypeScript sobre JavaScript?",
+                options: ["Tipagem estática", "Sintaxe simples", "Mais rápido", "Suporte a CSS"],
+                correct: 0
+            }, {
+                level: "Difícil",
+                category: "Programação",
+                question: "O que é o padrão 'Observer'?",
+                options: ["Permite notificar objetos sobre mudanças", "Cria objetos únicos", "Controla acesso a métodos", "Faz lazy loading"],
+                correct: 0
+            }, {
+                level: "Difícil",
+                category: "Programação",
+                question: "Em programação assíncrona, o que é um 'Promise'?",
+                options: ["Objeto que representa um valor futuro", "Função síncrona", "Variável global", "Loop infinito"],
+                correct: 0
             },
 
             // 🕵 ENGENHARIA SOCIAL - FÁCIL
@@ -639,6 +813,36 @@
                 category: "Engenharia Social",
                 question: "Spam é:",
                 options: ["Email não solicitado", "Antivírus", "Firewall", "Senha forte"],
+                correct: 0
+            }, {
+                level: "Fácil",
+                category: "Engenharia Social",
+                question: "Qual é o objetivo principal da engenharia social?",
+                options: ["Manipular pessoas para obter informações", "Criar vírus", "Proteger redes", "Desenvolver software"],
+                correct: 0
+            }, {
+                level: "Fácil",
+                category: "Engenharia Social",
+                question: "Qual desses é um método comum de ataque de engenharia social?",
+                options: ["Phishing", "Malware", "SQL Injection", "DDoS"],
+                correct: 0
+            }, {
+                level: "Fácil",
+                category: "Engenharia Social",
+                question: "O que é um 'pretexting'?",
+                options: ["Fingir ser outra pessoa para obter informações", "Tipo de malware", "Firewall", "Senha forte"],
+                correct: 0
+            }, {
+                level: "Fácil",
+                category: "Engenharia Social",
+                question: "Como evitar ataques de engenharia social?",
+                options: ["Desconfiar de solicitações suspeitas", "Compartilhar senhas", "Clicar em links desconhecidos", "Usar Wi-Fi público"],
+                correct: 0
+            }, {
+                level: "Fácil",
+                category: "Engenharia Social",
+                question: "O que é um 'baiting' em engenharia social?",
+                options: ["Isca para atrair vítimas", "Tipo de vírus", "Firewall", "Backup de dados"],
                 correct: 0
             },
 
@@ -679,6 +883,36 @@
                 question: "O que é shoulder surfing?",
                 options: ["Espiar senha", "Firewall", "Antivírus", "Wi-Fi seguro"],
                 correct: 0
+            }, {
+                level: "Médio",
+                category: "Engenharia Social",
+                question: "Qual é a definição de 'spoofing'?",
+                options: ["Falsificar identidade para enganar", "Ataque físico", "Antivírus", "Firewall"],
+                correct: 0
+            }, {
+                level: "Médio",
+                category: "Engenharia Social",
+                question: "O que é 'shoulder surfing'?",
+                options: ["Observar informações secretas por cima do ombro", "Ataque de vírus", "Firewall", "Senha forte"],
+                correct: 0
+            }, {
+                level: "Médio",
+                category: "Engenharia Social",
+                question: "O que é um 'watering hole attack'?",
+                options: ["Comprometer site para infectar vítimas", "Ataque de negação de serviço", "Firewall", "Antivírus"],
+                correct: 0
+            }, {
+                level: "Médio",
+                category: "Engenharia Social",
+                question: "O que é 'tailgating' em segurança física?",
+                options: ["Entrar em área restrita seguindo alguém", "Roubo de dados", "Ataque de phishing", "Firewall"],
+                correct: 0
+            }, {
+                level: "Médio",
+                category: "Engenharia Social",
+                question: "Como o 'spear phishing' difere do phishing tradicional?",
+                options: ["É direcionado a indivíduos específicos", "É um ataque em massa", "Não é perigoso", "É usado para proteção"],
+                correct: 0
             },
 
             // 🕵 ENGENHARIA SOCIAL - DIFÍCIL
@@ -718,8 +952,39 @@
                 question: "Qual conceito envolve engenharia social em empresas?",
                 options: ["Espionagem corporativa", "Firewall", "Antivírus", "Backup"],
                 correct: 0
+            }, {
+                level: "Difícil",
+                category: "Engenharia Social",
+                question: "O que significa 'Man-in-the-Middle' em segurança digital?",
+                options: ["Interceptação de comunicação entre duas partes", "Ataque físico", "Firewall", "Antivírus"],
+                correct: 0
+            }, {
+                level: "Difícil",
+                category: "Engenharia Social",
+                question: "O que é um 'honeypot' em segurança da informação?",
+                options: ["Sistema para atrair e analisar invasores", "Firewall avançado", "Backup automático", "Antivírus"],
+                correct: 0
+            }, {
+                level: "Difícil",
+                category: "Engenharia Social",
+                question: "Qual é o principal propósito do 'social engineering toolkit' (SET)?",
+                options: ["Ferramenta para simular ataques de engenharia social", "Criar senhas seguras", "Proteger redes", "Gerenciar backups"],
+                correct: 0
+            }, {
+                level: "Difícil",
+                category: "Engenharia Social",
+                question: "O que é 'cryptojacking'?",
+                options: ["Uso não autorizado de recursos para mineração de criptomoedas", "Ataque de phishing", "Ataque físico", "Firewall"],
+                correct: 0
+            }, {
+                level: "Difícil",
+                category: "Engenharia Social",
+                question: "O que caracteriza um ataque de 'zero-day'?",
+                options: ["Exploração de vulnerabilidade desconhecida", "Ataque já conhecido e corrigido", "Backup automático", "Firewall atualizado"],
+                correct: 0
             }
         ];
+
 
 
 
@@ -731,6 +996,8 @@
             score = 0;
             currentQuestionIndex = 0;
             lives = 3;
+            resetLifeDisplay();
+            scoreboard.textContent = "Pontuação: 0";
             showScreen(quizScreen);
             bgMusic.volume = 0.2;
             bgMusic.play();
@@ -742,6 +1009,29 @@
 
             startQuiz();
         });
+
+        quitBtn.addEventListener("click", () => {
+            soundClick.play();
+            resetGame();
+        });
+
+        function resetLifeDisplay() {
+            const lifeSpans = livesEl.querySelectorAll("span");
+            lifeSpans.forEach(span => {
+                span.textContent = "❤";
+            });
+        }
+
+        function resetGame() {
+            clearInterval(timer);
+            bgMusic.pause();
+            bgMusic.currentTime = 0;
+            lives = 3;
+            resetLifeDisplay();
+            scoreboard.textContent = "Pontuação: 0";
+            showScreen(startScreen);
+        }
+
 
         howToPlayBtn.addEventListener("click", () => {
             soundClick.play();
