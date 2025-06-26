@@ -72,6 +72,27 @@
             text-align: center;
         }
         
+        #how-to-play-btn {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background: transparent;
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.77rem;
+            cursor: pointer;
+            z-index: 9999;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        #how-to-play-btn:hover {
+            background: #00ff00;
+            color: #000;
+        }
+        
         button {
             padding: 12px 25px;
             border: 2px solid #00ff00;
@@ -270,7 +291,7 @@
 </head>
 
 <body>
-    <!-- Botão fixo de Ranking -->
+
     <button id="ranking-fixed-btn" title="Ver Ranking">🏆 Ranking</button>
 
 
@@ -289,7 +310,8 @@
             <option value="Engenharia Social">Engenharia Social</option>
         </select>
         <button id="start-btn">Começar Quiz</button>
-        <button id="how-to-play-btn">Como Jogar</button>
+        <button id="how-to-play-btn">🎮 Como Jogar</button>
+
     </div>
 
     <div class="overlay hidden" id="how-to-play-modal">
@@ -1002,12 +1024,13 @@
             bgMusic.volume = 0.2;
             bgMusic.play();
 
-            filteredQuestions = questions.filter(q =>
+            filteredQuestions = shuffleQuestions(questions.filter(q =>
                 q.level.toLowerCase() === selectedLevel.toLowerCase() &&
                 q.category.toLowerCase() === selectedCategory.toLowerCase()
-            );
+            ));
 
             startQuiz();
+
         });
 
         quitBtn.addEventListener("click", () => {
@@ -1067,6 +1090,11 @@
             [startScreen, quizScreen, howToPlayModal, rankingScreen].forEach(s => s.classList.add("hidden"));
             screen.classList.remove("hidden");
         }
+
+        function shuffleQuestions(arr) {
+            return [...arr].sort(() => Math.random() - 0.5);
+        }
+
 
         function startQuiz() {
             showQuestion();
