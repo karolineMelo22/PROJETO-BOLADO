@@ -5,6 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Quiz Gamer - TechBrain</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
         * {
@@ -90,6 +92,25 @@
         
         #how-to-play-btn:hover {
             background: #00ff00;
+            color: #000;
+        }
+        
+        #whatsapp-share-btn {
+            margin-top: 10px;
+            padding: 12px 20px;
+            background: transparent;
+            border: 2px solid #25D366;
+            /* verde WhatsApp */
+            color: #25D366;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        #whatsapp-share-btn:hover {
+            background: #25D366;
             color: #000;
         }
         
@@ -233,6 +254,24 @@
             cursor: default;
         }
         
+        #congratsScreen {
+            z-index: 9999;
+        }
+        
+        #congratsScreen h1 {
+            color: #00ff00;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        #congratsScreen p {
+            font-size: 1rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
         #quit-btn {
             margin-top: 10px;
             padding: 12px 25px;
@@ -295,14 +334,13 @@
     <button id="ranking-fixed-btn" title="Ver Ranking">🏆 Ranking</button>
 
 
-
     <div class="overlay" id="start-screen">
         <h1>Quiz Gamer - TechBrain</h1>
         <input type="text" id="player-name" placeholder="Digite seu nome..." maxlength="15" />
         <select id="level-select">
-            <option value="Fácil">Fácil</option>
-            <option value="Médio">Médio</option>
-            <option value="Difícil">Difícil</option>
+        <option value="Fácil">Fácil</option>
+        <option value="Médio">Médio</option>
+        <option value="Difícil">Difícil</option>
         </select>
         <select id="category-select">
             <option value="Games">Games</option>
@@ -349,6 +387,14 @@
             <button id="clear-ranking-btn">Limpar Ranking</button>
         </div>
     </div>
+
+    <div id="congratsScreen" class="overlay hidden">
+        <h1>🎉 Parabéns, <span id="congrats-player-name">Jogador</span>!</h1>
+        <p>Você acertou todas as perguntas e venceu o desafio!</p>
+        <button onclick="resetGame()">Voltar ao início</button>
+        <button id="whatsapp-share-btn">📤 Compartilhar no WhatsApp</button>
+    </div>
+
 
 
     <audio id="bg-music" loop src="techbrain.mp3"></audio>
@@ -1053,7 +1099,24 @@
             resetLifeDisplay();
             scoreboard.textContent = "Pontuação: 0";
             showScreen(startScreen);
+
         }
+
+        function showScreen(screen) {
+            [startScreen, quizScreen, howToPlayModal, rankingScreen, congratsScreen].forEach(s => s.classList.add("hidden"));
+            screen.classList.remove("hidden");
+        }
+
+        function launchConfetti() {
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: {
+                    y: 0.6
+                }
+            });
+        }
+
 
 
         howToPlayBtn.addEventListener("click", () => {
@@ -1086,10 +1149,7 @@
             nextQuestion();
         });
 
-        function showScreen(screen) {
-            [startScreen, quizScreen, howToPlayModal, rankingScreen].forEach(s => s.classList.add("hidden"));
-            screen.classList.remove("hidden");
-        }
+
 
         function shuffleQuestions(arr) {
             return [...arr].sort(() => Math.random() - 0.5);
@@ -1179,10 +1239,22 @@
         function endGame() {
             clearInterval(timer);
             saveRanking(playerName, score);
-            showRanking();
             bgMusic.pause();
             bgMusic.currentTime = 0;
+
+            const maxScore = filteredQuestions.length * 10;
+            if (score === maxScore) {
+                document.getElementById("congrats-player-name").textContent = playerName;
+                showScreen(congratsScreen);
+                document.getElementById("congrats-player-name").textContent = playerName;
+                showScreen(congratsScreen);
+                launchConfetti();
+
+            } else {
+                showRanking();
+            }
         }
+
 
         function saveRanking(name, score) {
             const ranking = JSON.parse(localStorage.getItem("techbrain_ranking")) || [];
@@ -1207,12 +1279,26 @@
             showScreen(startScreen);
         }
 
+
+        function shareOnWhatsApp() {
+            const message = `🎉 Eu acertei tudo no Quiz Gamer - TechBrain! Jogue também! 💻🔥`;
+            const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+
         const clearRankingBtn = document.getElementById("clear-ranking-btn");
 
         clearRankingBtn.addEventListener("click", () => {
             soundClick.play();
             localStorage.removeItem("techbrain_ranking");
             rankingList.innerHTML = "<li>Nenhum registro</li>";
+        });
+
+        document.getElementById("whatsapp-share-btn").addEventListener("click", () => {
+            const message = `🎮 Eu acertei tudo no Quiz Gamer - TechBrain! Jogue também! 💻🔥`;
+            const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
         });
     </script>
 </body>
