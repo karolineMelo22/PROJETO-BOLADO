@@ -1296,7 +1296,7 @@
         });
 
         document.getElementById("whatsapp-share-btn").addEventListener("click", () => {
-            const message = `🎮 Eu acertei tudo no Quiz Gamer - TechBrain! Jogue também! 💻🔥`;
+            const message = `🎮 Eu acertei tudo no Quiz Gamer - TechBrain! Jogue também! https://karolinemelo22.github.io/PROJETO-BOLADO/ 💻🔥`;
             const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
             window.open(url, "_blank");
         });
