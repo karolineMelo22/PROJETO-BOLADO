@@ -26,7 +26,7 @@
         }
         
         .overlay {
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.40);
             position: fixed;
             inset: 0;
             display: flex;
@@ -62,16 +62,45 @@
             margin-bottom: 20px;
         }
         
-        input[type=text],
-        select {
-            padding: 10px;
-            width: 280px;
-            font-size: 1rem;
-            border: 2px solid #00ff00;
-            background: transparent;
+        input[type="text"],
+        select,
+        button {
+            font-family: 'Press Start 2P', cursive;
+            margin-bottom: 20px;
+            padding: 14px 25px;
+            font-size: 1.1rem;
+            border: 3px solid #00ff00;
+            background: rgba(0, 0, 0, 0.8);
             color: #00ff00;
             outline: none;
             text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 0 8px #00ff00, inset 0 0 10px #003300;
+            transition: box-shadow 0.4s ease, color 0.4s ease, background 0.4s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+        
+        input[type="text"]:focus,
+        select:focus,
+        button:focus {
+            box-shadow: 0 0 20px #00ff00, inset 0 0 15px #00ff00;
+            color: #aaffaa;
+            background: rgba(0, 30, 0, 0.95);
+        }
+        
+        input[type="text"]:hover,
+        select:hover,
+        button:hover {
+            box-shadow: 0 0 18px #00ff00, inset 0 0 15px #009900;
+            color: #ccffcc;
+            background: rgba(0, 40, 0, 0.9);
+        }
+        
+        button:active {
+            transform: scale(0.95);
+            box-shadow: 0 0 5px #00cc00, inset 0 0 20px #00cc00;
+            color: #99ff99;
+            background: rgba(0, 50, 0, 1);
         }
         
         #how-to-play-btn {
@@ -99,9 +128,8 @@
             margin-top: 10px;
             padding: 12px 20px;
             background: transparent;
-            border: 2px solid #25D366;
-            /* verde WhatsApp */
-            color: #25D366;
+            border: 2px solid #46f340;
+            color: #4dfd07;
             font-family: 'Press Start 2P', cursive;
             font-size: 0.7rem;
             cursor: pointer;
@@ -110,7 +138,7 @@
         }
         
         #whatsapp-share-btn:hover {
-            background: #25D366;
+            background: #51ff1c;
             color: #000;
         }
         
@@ -302,7 +330,7 @@
         }
         
         #ranking-back-btn:hover {
-            background: #00ff00;
+            background: #27e427;
             color: #000;
         }
         
@@ -323,8 +351,121 @@
         }
         
         #ranking-fixed-btn:hover {
-            background: #00ff00;
+            background: #47f741;
             color: #000;
+        }
+        
+        select {
+            width: 280px;
+            padding: 14px 25px;
+            font-size: 1.1rem;
+            font-family: 'Press Start 2P', cursive;
+            background: rgba(0, 0, 0, 0.8);
+            color: #41ff28;
+            border: 3px solid #38f831;
+            border-radius: 12px;
+            outline: none;
+            box-shadow: 0 0 8px #690d65, inset 0 0 10px #003300;
+            text-align-last: center;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            cursor: pointer;
+            transition: box-shadow 0.4s ease, color 0.4s ease, background 0.4s ease, transform 0.2s ease;
+        }
+        
+        #quiz-container {
+            max-width: 700px;
+            width: 90%;
+            margin: 40px auto;
+            padding: 30px;
+            background: #050505e3;
+            color: #0f0;
+            border-radius: 15px;
+            box-shadow: 0 0 15px #520855;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+        }
+        
+        #ranking-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        #ranking-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            background: #000;
+            border-radius: 8px;
+            animation: fadeIn 0.4s ease;
+            border: 1px solid #0f0;
+        }
+        
+        #ranking-list li.highlight {
+            background: rgba(82, 4, 82, 0.849);
+            box-shadow: 0 0 12px #8ffa15;
+            font-weight: bold;
+        }
+        
+        #ranking-list span.pos {
+            width: 50px;
+            text-align: left;
+        }
+        
+        #ranking-list span.name {
+            flex-grow: 1;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        #ranking-list span.score {
+            width: 100px;
+            text-align: right;
+        }
+        
+        .ranking-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .ranking-buttons button {
+            padding: 10px 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background: #b60ce0;
+            color: #000;
+            transition: 0.2s;
+        }
+        
+        .ranking-buttons button:hover {
+            background: rgb(99, 241, 71);
+        }
+        
+        .medal {
+            font-size: 1.2em;
+            margin-right: 6px;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -382,9 +523,13 @@
     <div class="overlay hidden" id="ranking-screen">
         <div id="quiz-container">
             <h2>🏆 Ranking - TechBrain</h2>
-            <ol id="ranking-list" style="text-align:center; margin-bottom:20px; color:#0f0;"></ol>
-            <button id="ranking-back-btn">Voltar</button>
-            <button id="clear-ranking-btn">Limpar Ranking</button>
+            <ul id="ranking-list"></ul>
+            <p id="empty-ranking" style="display: none;">Nenhum registro ainda. Jogue e conquiste seu lugar!</p>
+
+            <div class="ranking-buttons">
+                <button id="ranking-back-btn">Voltar</button>
+                <button id="clear-ranking-btn">Limpar Ranking</button>
+            </div>
         </div>
     </div>
 
@@ -1268,9 +1413,52 @@
 
         function showRanking() {
             showScreen(rankingScreen);
+
             const ranking = JSON.parse(localStorage.getItem("techbrain_ranking")) || [];
-            rankingList.innerHTML = ranking.map(r => `<li>${r.name}: ${r.score} pts</li>`).join("");
+            const rankingList = document.getElementById("ranking-list");
+            const emptyMsg = document.getElementById("empty-ranking");
+
+            rankingList.innerHTML = "";
+
+            if (ranking.length === 0) {
+                emptyMsg.style.display = "block";
+                return;
+            } else {
+                emptyMsg.style.display = "none";
+            }
+
+            const playerAtual = window.playerName || "Jogador"; // pega jogador atual
+
+            ranking.forEach((r, index) => {
+                const li = document.createElement("li");
+
+                const pos = document.createElement("span");
+                pos.className = "pos";
+                if (index === 0) pos.innerHTML = "🥇";
+                else if (index === 1) pos.innerHTML = "🥈";
+                else if (index === 2) pos.innerHTML = "🥉";
+                else pos.textContent = index + 1;
+
+                const name = document.createElement("span");
+                name.className = "name";
+                name.textContent = r.name;
+
+                const score = document.createElement("span");
+                score.className = "score";
+                score.textContent = `${r.score} pts`;
+
+                li.appendChild(pos);
+                li.appendChild(name);
+                li.appendChild(score);
+
+                if (r.name === playerAtual) {
+                    li.classList.add("highlight");
+                }
+
+                rankingList.appendChild(li);
+            });
         }
+
 
         function resetGame() {
             clearInterval(timer);
