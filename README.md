@@ -26,7 +26,7 @@
         }
         
         .overlay {
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.40);
             position: fixed;
             inset: 0;
             display: flex;
@@ -62,16 +62,45 @@
             margin-bottom: 20px;
         }
         
-        input[type=text],
-        select {
-            padding: 10px;
-            width: 280px;
-            font-size: 1rem;
-            border: 2px solid #00ff00;
-            background: transparent;
+        input[type="text"],
+        select,
+        button {
+            font-family: 'Press Start 2P', cursive;
+            margin-bottom: 20px;
+            padding: 14px 25px;
+            font-size: 1.1rem;
+            border: 3px solid #00ff00;
+            background: rgba(0, 0, 0, 0.8);
             color: #00ff00;
             outline: none;
             text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 0 8px #00ff00, inset 0 0 10px #003300;
+            transition: box-shadow 0.4s ease, color 0.4s ease, background 0.4s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+        
+        input[type="text"]:focus,
+        select:focus,
+        button:focus {
+            box-shadow: 0 0 20px #00ff00, inset 0 0 15px #00ff00;
+            color: #aaffaa;
+            background: rgba(0, 30, 0, 0.95);
+        }
+        
+        input[type="text"]:hover,
+        select:hover,
+        button:hover {
+            box-shadow: 0 0 18px #00ff00, inset 0 0 15px #009900;
+            color: #ccffcc;
+            background: rgba(0, 40, 0, 0.9);
+        }
+        
+        button:active {
+            transform: scale(0.95);
+            box-shadow: 0 0 5px #00cc00, inset 0 0 20px #00cc00;
+            color: #99ff99;
+            background: rgba(0, 50, 0, 1);
         }
         
         #how-to-play-btn {
@@ -325,6 +354,25 @@
         #ranking-fixed-btn:hover {
             background: #00ff00;
             color: #000;
+        }
+        
+        select {
+            width: 280px;
+            padding: 14px 25px;
+            font-size: 1.1rem;
+            font-family: 'Press Start 2P', cursive;
+            background: rgba(0, 0, 0, 0.8);
+            color: #00ff00;
+            border: 3px solid #00ff00;
+            border-radius: 12px;
+            outline: none;
+            box-shadow: 0 0 8px #00ff00, inset 0 0 10px #003300;
+            text-align-last: center;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            cursor: pointer;
+            transition: box-shadow 0.4s ease, color 0.4s ease, background 0.4s ease, transform 0.2s ease;
         }
     </style>
 </head>
