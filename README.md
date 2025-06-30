@@ -1199,8 +1199,6 @@
         ];
 
 
-
-
         startBtn.addEventListener("click", () => {
             soundClick.play();
             playerName = document.getElementById("player-name").value.trim() || "Jogador";
@@ -1214,6 +1212,9 @@
             showScreen(quizScreen);
             bgMusic.volume = 0.2;
             bgMusic.play();
+
+            rankingFixedBtn.classList.add("hidden");
+
 
             filteredQuestions = shuffleQuestions(questions.filter(q =>
                 q.level.toLowerCase() === selectedLevel.toLowerCase() &&
@@ -1465,6 +1466,9 @@
             bgMusic.pause();
             bgMusic.currentTime = 0;
             showScreen(startScreen);
+
+            rankingFixedBtn.classList.remove("hidden");
+
         }
 
 
